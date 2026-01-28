@@ -1,0 +1,16 @@
+[
+  {
+    "id": "the",
+    "promptText": "Click: the",
+    "promptAudio": "/audio/words/the.mp3",
+    "choices": ["the", "and", "to", "is"],
+    "answer": "the"
+  },
+  {
+    "id": "and",
+    "promptText": "Click: and",
+    "promptAudio": "/audio/words/and.mp3",
+    "choices": ["the", "and", "to", "is"],
+    "answer": "and"
+  }
+]
