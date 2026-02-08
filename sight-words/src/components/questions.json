@@ -1,16 +1,34 @@
 [
-  {
-    "id": "the",
-    "promptText": "Click: the",
-    "promptAudio": "/audio/words/the.mp3",
-    "choices": ["the", "and", "to", "is"],
-    "answer": "the"
-  },
-  {
-    "id": "and",
-    "promptText": "Click: and",
-    "promptAudio": "/audio/words/and.mp3",
-    "choices": ["the", "and", "to", "is"],
-    "answer": "and"
-  }
+  { "id": "am",   "display": "am",   "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/am.mp3",   "answer": "am" },
+  { "id": "a",    "display": "a",    "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/a.mp3",    "answer": "a" },
+  { "id": "an",   "display": "an",   "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/an.mp3",   "answer": "an" },
+  { "id": "and",  "display": "and",  "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/and.mp3",  "answer": "and" },
+  { "id": "as",   "display": "as",   "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/as.mp3",   "answer": "as" },
+  { "id": "are",  "display": "are",  "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/are.mp3",  "answer": "are" },
+  { "id": "do",   "display": "do",   "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/do.mp3",   "answer": "do" },
+  { "id": "for",  "display": "for",  "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/for.mp3",  "answer": "for" },
+  { "id": "go",   "display": "go",   "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/go.mp3",   "answer": "go" },
+  { "id": "he",   "display": "he",   "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/he.mp3",   "answer": "he" },
+  { "id": "her",  "display": "her",  "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/her.mp3",  "answer": "her" },
+  { "id": "his",  "display": "his",  "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/his.mp3",  "answer": "his" },
+  { "id": "i",    "display": "I",    "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/i.mp3",    "answer": "I" },
+  { "id": "is",   "display": "is",   "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/is.mp3",   "answer": "is" },
+  { "id": "into", "display": "into", "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/into.mp3", "answer": "into" },
+  { "id": "me",   "display": "me",   "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/me.mp3",   "answer": "me" },
+  { "id": "my",   "display": "my",   "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/my.mp3",   "answer": "my" },
+  { "id": "no",   "display": "no",   "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/no.mp3",   "answer": "no" },
+  { "id": "not",  "display": "not",  "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/not.mp3",  "answer": "not" },
+  { "id": "of",   "display": "of",   "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/of.mp3",   "answer": "of" },
+  { "id": "or",   "display": "or",   "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/or.mp3",   "answer": "or" },
+  { "id": "so",   "display": "so",   "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/so.mp3",   "answer": "so" },
+  { "id": "said", "display": "said", "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/said.mp3", "answer": "said" },
+  { "id": "see",  "display": "see",  "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/see.mp3",  "answer": "see" },
+  { "id": "she",  "display": "she",  "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/she.mp3",  "answer": "she" },
+  { "id": "the",  "display": "the",  "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/the.mp3",  "answer": "the" },
+  { "id": "to",   "display": "to",   "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/to.mp3",   "answer": "to" },
+  { "id": "that", "display": "that", "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/that.mp3", "answer": "that" },
+  { "id": "was",  "display": "was",  "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/was.mp3",  "answer": "was" },
+  { "id": "look", "display": "look", "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/look.mp3", "answer": "look" },
+  { "id": "good", "display": "good", "promptText": "Click:", "promptImage": "./src/public/assets/sound-icon.jpg", "promptAudio": "/audio/words/good.mp3", "answer": "good" }
 ]
+

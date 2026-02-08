@@ -28,6 +28,19 @@
   margin-bottom: 1.5rem;
 }
 
+.prompt-image {
+  width: 100px;
+  height: 100px;
+  
+}
+
+.feedback {
+  font-size: 24px;
+  margin: 12px 0;
+  color: white;
+}
+
+
 .choice-button {
   padding: 1rem;
   font-size: 22px;
@@ -36,8 +49,16 @@
   background: #ffd86b;
   cursor: pointer;
   transition: 0.2s ease;
+  color: black;
 }
 
 .choice-button:hover {
   background-color: aqua;
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
