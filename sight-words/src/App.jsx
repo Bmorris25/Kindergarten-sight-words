@@ -6,7 +6,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div class="card-container">
+    <div className="card-container">
       <QuestionCard />
     </div>
   )

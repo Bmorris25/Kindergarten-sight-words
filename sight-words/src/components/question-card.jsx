@@ -4,7 +4,9 @@ import questions from './questions.json';
 function QuestionCard() {
 
   const [questionCount, setQuestionCount] = useState(0);
-  const questonLimit = 10;
+  const questionLimit = 10;
+  
+  
 
   function getRandomQuestion() {
     const index = Math.floor(Math.random() * questions.length);
@@ -25,6 +27,7 @@ function QuestionCard() {
   }
 
   const firstQuestion = getRandomQuestion();
+  
 
   const [currentQuestion, setCurrentQuestion] = useState(firstQuestion);
   const [choices, setChoices] = useState(
@@ -36,8 +39,12 @@ function QuestionCard() {
   const [feedback, setFeedback] = useState("");
 
     function playPromptAudio() {
+    if (!currentQuestion?.promptAudio) return;
     const audio = new Audio(currentQuestion.promptAudio);
-    audio.play();
+    audio.currentTime = 0;
+    audio.play().catch((err) => {
+      console.log("Autoplay blocked until user interacts:", err);
+    });
   }
 
   useEffect(() => {
@@ -45,7 +52,7 @@ function QuestionCard() {
   }, [currentQuestion]);
 
   function nextQuestion() {
-    if (questionCount + 1 >= questonLimit) {
+    if (questionCount + 1 >= questionLimit) {
       setGameOver(true);
       return
     }
@@ -96,7 +103,7 @@ function QuestionCard() {
 
   return (
     <div className="question-card">
-      <h2 className='prompt'>{currentQuestion.promptText}</h2>
+     
 
       {currentQuestion.promptImage && (
         <img
@@ -107,6 +114,8 @@ function QuestionCard() {
           style={{ cursor: "pointer"}}
         />
       )}
+
+      <h2 className='prompt'>{currentQuestion.promptText}</h2>
 
       {feedback && <p className="feedback">{feedback}</p>}
 
