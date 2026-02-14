@@ -6,12 +6,8 @@ function QuestionCard() {
   const [questionCount, setQuestionCount] = useState(0);
   const questionLimit = 10;
   
-  
+  const [gameStarted, setGameStarted] = useState(false);
 
-  function getRandomQuestion() {
-    const index = Math.floor(Math.random() * questions.length);
-    return questions[index];
-  }
 
   function shuffle(array) {
     return [...array].sort(() => Math.random() - 0.5);
@@ -24,16 +20,18 @@ function QuestionCard() {
 
     const wrongChoices = shuffle(wrongPool).slice(0, 3);
     return shuffle([correctAnswer, ...wrongChoices]);
-  }
-
-  const firstQuestion = getRandomQuestion();
+  }  
   
+  const [remainingQuestions, setRemainingQuestions] = useState (
+      shuffle([...questions])
+    )
 
-  const [currentQuestion, setCurrentQuestion] = useState(firstQuestion);
-  const [choices, setChoices] = useState(
-    buildChoices(questions, firstQuestion.answer)
+  const [currentQuestion, setCurrentQuestion] = useState(remainingQuestions[0]);
+  const [choices, setChoices] = useState(() =>
+    buildChoices(questions, remainingQuestions[0].answer)
   );
 
+  
   const [gameOver, setGameOver] = useState(false);
 
   const [feedback, setFeedback] = useState("");
@@ -47,24 +45,32 @@ function QuestionCard() {
     });
   }
 
-  useEffect(() => {
+   useEffect(() => {
+    if (!gameStarted) return;   // 👈 stop if still on start screen
     playPromptAudio();
-  }, [currentQuestion]);
+}, [currentQuestion, gameStarted]);
+
 
   function nextQuestion() {
-    if (questionCount + 1 >= questionLimit) {
-      setGameOver(true);
-      return
-    }
-
-    setFeedback("");
-
-    const q = getRandomQuestion();
-    setCurrentQuestion(q);
-    setChoices(buildChoices(questions, q.answer));
-
-    setQuestionCount(prev => prev + 1);
+  if (questionCount + 1 >= questionLimit) {
+    setGameOver(true);
+    return;
   }
+
+  setFeedback("");
+
+  setRemainingQuestions((prev) => {
+    const updated = prev.slice(1); // drop the one we just used
+    const next = updated[0];
+
+    setCurrentQuestion(next);
+    setChoices(buildChoices(questions, next.answer));
+    return updated;
+  });
+
+  setQuestionCount((prev) => prev + 1);
+}
+
 
 
   function handleClickChoice(choice) {
@@ -80,13 +86,35 @@ function QuestionCard() {
 
   
 
-  function resetGame() {
-    setGameOver(false);
-    setQuestionCount(0);
-    const q = getRandomQuestion();
-    setCurrentQuestion(q);
-    setChoices(buildChoices(questions, q.answer));
-    setFeedback("");
+function resetGame() {
+  const newDeck = shuffle([...questions]);
+
+  setRemainingQuestions(newDeck);
+  setCurrentQuestion(newDeck[0]);
+  setChoices(buildChoices(questions, newDeck[0].answer));
+
+  setGameOver(false);
+  setQuestionCount(0);
+  setFeedback("");
+
+  setGameStarted(false); // go back to start screen
+}
+
+
+
+  if(!gameStarted) {
+    return (
+      <div className='question-card'>
+        <img
+        src='./src/public/assets/blueyStart.png'
+        alt='start game'
+        className='start-image'
+        onClick={() => setGameStarted(true)}
+        style={{ cursor: "pointer"}}
+        />
+        <h2>Tap to Start</h2>
+      </div>
+    )
   }
 
   if(gameOver) {
@@ -100,6 +128,8 @@ function QuestionCard() {
       </div>
     )
   }
+
+  
 
   return (
     <div className="question-card">

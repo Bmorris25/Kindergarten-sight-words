@@ -62,3 +62,12 @@
   gap: 1rem;
   flex-wrap: wrap;
 }
+
+.start-image {
+  width: 200px;
+  transition: transform 0.2s ease;
+}
+
+.start-image:hover {
+  transform: scale(1.05);
+}
