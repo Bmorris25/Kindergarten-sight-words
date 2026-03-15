@@ -5,6 +5,11 @@ function QuestionCard() {
 
   const [questionCount, setQuestionCount] = useState(0);
   const questionLimit = 10;
+
+  function withBase(path) {
+  return `${import.meta.env.BASE_URL}${path}`;
+}
+
   
   const [gameStarted, setGameStarted] = useState(false);
 
@@ -38,7 +43,7 @@ function QuestionCard() {
 
     function playPromptAudio() {
     if (!currentQuestion?.promptAudio) return;
-    const audio = new Audio(currentQuestion.promptAudio);
+    const audio = new Audio(withBase(currentQuestion.promptAudio));
     audio.currentTime = 0;
     audio.play().catch((err) => {
       console.log("Autoplay blocked until user interacts:", err);
@@ -106,12 +111,14 @@ function resetGame() {
     return (
       <div className='question-card'>
         <img
-        src='./src/public/assets/blueyStart.png'
-        alt='start game'
-        className='start-image'
-        onClick={() => setGameStarted(true)}
-        style={{ cursor: "pointer"}}
-        />
+  src={`assets/blueyStart.png`}
+  alt="start game"
+  className="start-image"
+  onClick={() => setGameStarted(true)}
+  style={{ cursor: "pointer" }}
+/>
+
+
         <h2>Tap to Start</h2>
       </div>
     )
@@ -137,7 +144,7 @@ function resetGame() {
 
       {currentQuestion.promptImage && (
         <img
-          src={currentQuestion.promptImage}
+          src={withBase(currentQuestion.promptImage)}
           alt="prompt"
           className="prompt-image"
           onClick={playPromptAudio}
